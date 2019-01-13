@@ -6,10 +6,16 @@ import org.bukkit.ChatColor;
 public enum Title implements Displayable
 {
 
+<<<<<<< HEAD
     ARCHITECT("an", "Architect", "ARCHITECT", ChatColor.DARK_GREEN),
     DEVELOPER("a", "Developer", "DEV", ChatColor.DARK_PURPLE),
     ADVISOR("an", "Advisor", "ADVISOR", ChatColor.DARK_RED),
     LEADER("a", "Leader", "LEADER", ChatColor.DARK_RED);
+=======
+    ARCHITECT("an", "Architect", "ARC", ChatColor.GREEN),
+    DEVELOPER("a", "Developer", "DEV", ChatColor.DARK_PURPLE),
+    DIRECTOR("a", "Director", "DIR", ChatColor.RED);
+>>>>>>> 433c31f41b8f455e354d2838e9062d7472422bbb
 
     private final String determiner;
     @Getter
@@ -24,7 +30,11 @@ public enum Title implements Displayable
         this.determiner = determiner;
         this.name = name;
         this.color = color;
+<<<<<<< HEAD
         this.tag = color + "" + ChatColor.BOLD + tag + ChatColor.RESET + color;
+=======
+        this.tag = color + "" + ChatColor.BOLD +  tag + ChatColor.RESET + color;
+>>>>>>> 433c31f41b8f455e354d2838e9062d7472422bbb
     }
 
     public String getLoginMessage()

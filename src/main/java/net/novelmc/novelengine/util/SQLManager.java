@@ -2,6 +2,7 @@ package net.novelmc.novelengine.util;
 
 import lombok.Getter;
 import net.novelmc.novelengine.NovelEngine;
+<<<<<<< HEAD
 import org.apache.commons.io.FileUtils;
 import org.bukkit.Bukkit;
 import org.json.JSONObject;
@@ -14,6 +15,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.List;
+=======
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+>>>>>>> 433c31f41b8f455e354d2838e9062d7472422bbb
 
 public class SQLManager
 {
@@ -21,8 +28,11 @@ public class SQLManager
     @Getter
     private static Connection connection;
     private NovelEngine plugin;
+<<<<<<< HEAD
     private File file;
     private final String defaultJson = "{\"bans\":{}, \"players\":{}}";
+=======
+>>>>>>> 433c31f41b8f455e354d2838e9062d7472422bbb
 
     public SQLManager(NovelEngine plugin)
     {
@@ -31,11 +41,14 @@ public class SQLManager
 
     public boolean init()
     {
+<<<<<<< HEAD
         if(!plugin.config.isSQLEnabled())
         {
             return generateJson(new File(plugin.getDataFolder(), "database.yml"));
         }
 
+=======
+>>>>>>> 433c31f41b8f455e354d2838e9062d7472422bbb
         String host = plugin.config.getSQLHost();
         int port = plugin.config.getSQLPort();
         String username = plugin.config.getSQLUsername();
@@ -78,6 +91,7 @@ public class SQLManager
                 + "expiry LONG NOT NULL,"
                 + "type SET('PERMANENT_NAME', 'PERMANENT_IP', 'IP', 'NORMAL') NOT NULL)";
         c.prepareStatement(bans).executeUpdate();
+<<<<<<< HEAD
 
         String players = "CREATE TABLE IF NOT EXISTS players ("
                 + "name TEXT,"
@@ -147,5 +161,7 @@ public class SQLManager
     public String getDefaultJson()
     {
         return defaultJson;
+=======
+>>>>>>> 433c31f41b8f455e354d2838e9062d7472422bbb
     }
 }

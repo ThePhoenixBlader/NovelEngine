@@ -1,5 +1,6 @@
 package net.novelmc.novelengine.listener;
 
+<<<<<<< HEAD
 import net.novelmc.novelengine.banning.Ban;
 import net.novelmc.novelengine.banning.BanManager;
 import net.novelmc.novelengine.rank.Rank;
@@ -7,6 +8,15 @@ import net.novelmc.novelengine.rank.architect.ArchitectList;
 import net.novelmc.novelengine.rank.staff.StaffList;
 import net.novelmc.novelengine.util.NLog;
 import net.novelmc.novelengine.util.NovelBase;
+=======
+import net.novelmc.novelengine.NovelEngine;
+import net.novelmc.novelengine.architect.ArchitectList;
+import net.novelmc.novelengine.banning.Ban;
+import net.novelmc.novelengine.banning.BanManager;
+import net.novelmc.novelengine.rank.Rank;
+import net.novelmc.novelengine.staff.StaffList;
+import net.novelmc.novelengine.util.NLog;
+>>>>>>> 433c31f41b8f455e354d2838e9062d7472422bbb
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -19,6 +29,7 @@ import org.bukkit.event.player.*;
 
 import java.lang.reflect.Field;
 
+<<<<<<< HEAD
 public class PlayerListener extends NovelBase implements Listener
 {
 
@@ -26,6 +37,17 @@ public class PlayerListener extends NovelBase implements Listener
 
     public PlayerListener()
     {
+=======
+public class PlayerListener implements Listener
+{
+
+    private final NovelEngine plugin;
+    private CommandMap cmap = getCommandMap();
+
+    public PlayerListener(NovelEngine plugin)
+    {
+        this.plugin = plugin;
+>>>>>>> 433c31f41b8f455e354d2838e9062d7472422bbb
         Bukkit.getServer().getPluginManager().registerEvents(this, plugin);
     }
 
@@ -34,12 +56,19 @@ public class PlayerListener extends NovelBase implements Listener
     {
         final Player player = event.getPlayer();
 
+<<<<<<< HEAD
         plugin.playerDatabase.add(player.getName(), player.getAddress().getHostString());
+=======
+>>>>>>> 433c31f41b8f455e354d2838e9062d7472422bbb
         player.setOp(true);
 
         if (StaffList.isStaff(player))
         {
+<<<<<<< HEAD
             if (!StaffList.getStaff(player).getIps().contains(player.getAddress().getHostString()) && !StaffList.getStaff(player).getHomeIp().equals(player.getAddress().getHostString()))
+=======
+            if (!StaffList.getStaff(player).getIps().contains(player.getAddress().getHostString()))
+>>>>>>> 433c31f41b8f455e354d2838e9062d7472422bbb
             {
                 for (Player all : Bukkit.getOnlinePlayers())
                 {
@@ -100,6 +129,7 @@ public class PlayerListener extends NovelBase implements Listener
 
             event.disallow(PlayerLoginEvent.Result.KICK_OTHER, ban.getKickMessage());
         }
+<<<<<<< HEAD
 
         if (plugin.config.isStaffModeEnabled())
         {
@@ -110,6 +140,8 @@ public class PlayerListener extends NovelBase implements Listener
             }
             event.disallow(PlayerLoginEvent.Result.KICK_OTHER, "Maintenance Mode is enabled.");
         }
+=======
+>>>>>>> 433c31f41b8f455e354d2838e9062d7472422bbb
     }
 
     @EventHandler
@@ -128,11 +160,15 @@ public class PlayerListener extends NovelBase implements Listener
     @EventHandler
     public void onPlayerChat(AsyncPlayerChatEvent event)
     {
+<<<<<<< HEAD
         if (StaffList.isStaff(event.getPlayer())){
             event.setFormat(ChatColor.GRAY + event.getPlayer().getName() + " " + Rank.getDisplay(event.getPlayer()).getTag() + ChatColor.RESET + ChatColor.DARK_GRAY + " » " + ChatColor.WHITE + event.getMessage());
             return;
         }
         event.setFormat(ChatColor.GRAY + event.getPlayer().getName() + ChatColor.RESET + ChatColor.DARK_GRAY + " » " + ChatColor.WHITE + event.getMessage());
+=======
+        event.setFormat(Rank.getDisplay(event.getPlayer()).getTag() + " " + ChatColor.GRAY + event.getPlayer().getDisplayName() + ChatColor.DARK_GRAY + ": " + ChatColor.WHITE + event.getMessage());
+>>>>>>> 433c31f41b8f455e354d2838e9062d7472422bbb
     }
 
     @EventHandler

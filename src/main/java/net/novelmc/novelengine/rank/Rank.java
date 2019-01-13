@@ -2,9 +2,14 @@ package net.novelmc.novelengine.rank;
 
 import lombok.Getter;
 import net.novelmc.novelengine.NovelEngine;
+<<<<<<< HEAD
 import net.novelmc.novelengine.rank.architect.ArchitectList;
 import net.novelmc.novelengine.rank.staff.Staff;
 import net.novelmc.novelengine.rank.staff.StaffList;
+=======
+import net.novelmc.novelengine.architect.ArchitectList;
+import net.novelmc.novelengine.staff.StaffList;
+>>>>>>> 433c31f41b8f455e354d2838e9062d7472422bbb
 import net.novelmc.novelengine.util.NUtil;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
@@ -13,6 +18,7 @@ import org.bukkit.entity.Player;
 public enum Rank implements Displayable
 {
 
+<<<<<<< HEAD
     IMPOSTOR("an", "Impostor", "IMPOSTOR", ChatColor.WHITE),
     NON_OP("a", "Non-Op", "", ChatColor.WHITE),
     OP("a", "Member", "MEMBER", ChatColor.WHITE),
@@ -21,6 +27,16 @@ public enum Rank implements Displayable
     SENIOR_MOD("a", "Senior Mod", "SRMOD", ChatColor.GOLD),
     ADMIN("an", "Admin", "ADMIN", ChatColor.RED),
     MANAGER("a", "Manager", "MANAGER", ChatColor.BLUE),
+=======
+    IMPOSTOR("an", "Impostor", "IMP", ChatColor.WHITE),
+    NON_OP("a", "Non-Op", "", ChatColor.WHITE),
+    OP("a", "Member", "MBR", ChatColor.WHITE),
+    TRAINEE("a", "Trainee", "TRN", ChatColor.DARK_AQUA),
+    MOD("a", "Mod", "MOD", ChatColor.GOLD),
+    SENIOR_MOD("a", "Senior Mod", "SRM", ChatColor.GOLD),
+    ADMIN("an", "Admin", "ADM", ChatColor.BLUE),
+    MANAGER("a", "Manager", "SRA", ChatColor.BLUE),
+>>>>>>> 433c31f41b8f455e354d2838e9062d7472422bbb
     CONSOLE("the", "Console", "CONSOLE", ChatColor.DARK_RED);
 
     private final String determiner;
@@ -94,12 +110,18 @@ public enum Rank implements Displayable
 
     public static Displayable getDisplay(Player player)
     {
+<<<<<<< HEAD
         if (StaffList.isStaff(player)){
             if (StaffList.getStaff(player).isAdvisor()){
                 return Title.ADVISOR;
             } else if (StaffList.getStaff(player).isLeader()){
                 return Title.LEADER;
             }
+=======
+        if (StaffList.getStaff(player).isDirector())
+        {
+            return Title.DIRECTOR;
+>>>>>>> 433c31f41b8f455e354d2838e9062d7472422bbb
         }
 
         if (NUtil.DEVELOPERS.contains(player.getName()))

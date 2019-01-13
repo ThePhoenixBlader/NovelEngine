@@ -1,9 +1,12 @@
 package net.novelmc.novelengine.command;
 
 import net.novelmc.novelengine.NovelEngine;
+<<<<<<< HEAD
 import net.novelmc.novelengine.command.util.CommandBase;
 import net.novelmc.novelengine.command.util.CommandParameters;
 import net.novelmc.novelengine.command.util.SourceType;
+=======
+>>>>>>> 433c31f41b8f455e354d2838e9062d7472422bbb
 import net.novelmc.novelengine.rank.Rank;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -15,10 +18,16 @@ import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
 @CommandParameters(description = "Launchs them up, strikes them down", usage = "/<command> <player>", source = SourceType.BOTH, rank = Rank.MANAGER)
+<<<<<<< HEAD
 public class Command_launch extends CommandBase
 {
 
     @Override
+=======
+public class Command_launch
+{
+
+>>>>>>> 433c31f41b8f455e354d2838e9062d7472422bbb
     public boolean onCommand(CommandSender sender, Command cmd, String string, String[] args)
     {
         if (args.length < 1)

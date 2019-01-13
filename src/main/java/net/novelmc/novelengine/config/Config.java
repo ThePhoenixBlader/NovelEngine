@@ -18,11 +18,15 @@ public class Config extends YamlConfiguration
     {
         this.plugin = plugin;
         this.file = new File(plugin.getDataFolder(), "config.yml");
+<<<<<<< HEAD
 
         if (!file.exists())
         {
             saveDefault();
         }
+=======
+        saveDefault();
+>>>>>>> 433c31f41b8f455e354d2838e9062d7472422bbb
     }
 
     public String getServerName()
@@ -30,9 +34,15 @@ public class Config extends YamlConfiguration
         return super.getString("general.name");
     }
 
+<<<<<<< HEAD
     public List<String> getMOTD()
     {
         return super.getStringList("general.motd");
+=======
+    public String getMOTD()
+    {
+        return super.getString("general.motd");
+>>>>>>> 433c31f41b8f455e354d2838e9062d7472422bbb
     }
 
     public String getWebsite()
@@ -40,12 +50,15 @@ public class Config extends YamlConfiguration
         return super.getString("general.website");
     }
 
+<<<<<<< HEAD
     public boolean isStaffModeEnabled() { return super.getBoolean("general.staffmode"); }
 
     public void setStaffModeEnabled(boolean enable) {
         super.set("general.staffmode", enable);
     }
 
+=======
+>>>>>>> 433c31f41b8f455e354d2838e9062d7472422bbb
     public boolean isEventModeEnabled()
     {
         return super.getBoolean("general.eventmode");
@@ -66,6 +79,7 @@ public class Config extends YamlConfiguration
         return super.getStringList("commands.staff");
     }
 
+<<<<<<< HEAD
     public boolean isSQLEnabled()
     {
         return super.getBoolean("sql.enabled");
@@ -73,6 +87,13 @@ public class Config extends YamlConfiguration
 
     public String getSQLUsername() { return super.getString("sql.username"); }
 
+=======
+    public String getSQLUsername()
+    {
+        return super.getString("sql.username");
+    }
+
+>>>>>>> 433c31f41b8f455e354d2838e9062d7472422bbb
     public String getSQLPassword()
     {
         return super.getString("sql.password");

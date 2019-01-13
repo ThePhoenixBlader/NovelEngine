@@ -8,9 +8,13 @@ general:
   name: NovelMC
 
   # MOTD (shown on server list) - Color codes supported [&] and 2 lines motd [||] available
+<<<<<<< HEAD
   motd:
     - "&3Novel&9MC||1.13.2"
     - ""
+=======
+  motd: '&3Novel&9MC||1.13.2'
+>>>>>>> 433c31f41b8f455e354d2838e9062d7472422bbb
 
   # Website - useful to link to the forum for ban appeals, admin applications etc
   website: http://novelmc.net/
@@ -18,6 +22,7 @@ general:
   # Event mode
   eventmode: false
 
+<<<<<<< HEAD
   # Staff mode
   staffmode: false
 
@@ -28,6 +33,10 @@ pterodactyl:
 # SQL information
 sql:
   enabled: true
+=======
+# SQL information
+sql:
+>>>>>>> 433c31f41b8f455e354d2838e9062d7472422bbb
   username: root
   password: ''
   host: 127.0.0.1
@@ -35,9 +44,14 @@ sql:
   database: novelmc
 
 # TODO re-create command blocking system
+<<<<<<< HEAD
 # TODO permissions
 # Commands to block - default for all, admins for staff
 permissionblocker:
+=======
+# Commands to block - default for all, admins for staff
+commands:
+>>>>>>> 433c31f41b8f455e354d2838e9062d7472422bbb
   default:
     - '/gamemode'
     - '/time'

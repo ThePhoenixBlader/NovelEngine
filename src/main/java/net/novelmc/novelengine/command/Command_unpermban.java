@@ -3,9 +3,12 @@ package net.novelmc.novelengine.command;
 import net.novelmc.novelengine.banning.Ban;
 import net.novelmc.novelengine.banning.BanManager;
 import net.novelmc.novelengine.banning.BanType;
+<<<<<<< HEAD
 import net.novelmc.novelengine.command.util.CommandBase;
 import net.novelmc.novelengine.command.util.CommandParameters;
 import net.novelmc.novelengine.command.util.SourceType;
+=======
+>>>>>>> 433c31f41b8f455e354d2838e9062d7472422bbb
 import net.novelmc.novelengine.rank.Rank;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -15,10 +18,16 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @CommandParameters(description = "Remove a permban", usage = "/<command> <username | ip>", source = SourceType.BOTH, rank = Rank.MANAGER)
+<<<<<<< HEAD
 public class Command_unpermban extends CommandBase
 {
 
     @Override
+=======
+public class Command_unpermban
+{
+
+>>>>>>> 433c31f41b8f455e354d2838e9062d7472422bbb
     public boolean onCommand(CommandSender sender, Command cmd, String string, String[] args)
     {
         if (args.length < 1)

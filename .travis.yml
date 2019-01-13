@@ -13,12 +13,20 @@ notifications:
 addons:
   apt:
     packages:
+<<<<<<< HEAD
       - sshpass
 
 # upload to novelmc server
 after_success:
   - chmod +x travis-upload.sh
   - "./travis-upload.sh"
+=======
+    - sshpass
+
+# upload to novelmc server
+after_success:
+- "chmod +x travis-upload.sh && ./travis-upload.sh"
+>>>>>>> 433c31f41b8f455e354d2838e9062d7472422bbb
 
 # deploy on tagged commits as a draft build
 deploy:

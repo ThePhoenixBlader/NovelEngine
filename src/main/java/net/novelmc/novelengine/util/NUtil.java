@@ -1,5 +1,6 @@
 package net.novelmc.novelengine.util;
 
+<<<<<<< HEAD
 import net.novelmc.novelengine.rank.Displayable;
 import net.novelmc.novelengine.rank.Rank;
 import net.novelmc.novelengine.rank.staff.StaffList;
@@ -11,6 +12,15 @@ import org.bukkit.entity.Player;
 import org.reflections.Reflections;
 
 import java.lang.reflect.Field;
+=======
+import net.novelmc.novelengine.rank.Rank;
+import net.novelmc.novelengine.staff.StaffList;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+
+>>>>>>> 433c31f41b8f455e354d2838e9062d7472422bbb
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -20,6 +30,7 @@ import java.util.regex.Pattern;
 public class NUtil
 {
 
+<<<<<<< HEAD
     public static final List<String> DEVELOPERS = Arrays.asList("_Fleek", "Super_", "untuned", "irix", "Mafrans");
     public static SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss Z", Locale.ENGLISH);
 
@@ -76,6 +87,76 @@ public class NUtil
     }
 
     // Credits: Start (TotalFreedom (Can't be bothered writing these))
+=======
+    public static final List<String> DEVELOPERS = Arrays.asList("falceso", "Super_", "irix", "Mafrans", "taahanis");
+    public static String DATE_STORAGE_FORMAT = "EEE, d MMM yyyy HH:mm:ss Z";
+
+    public static void playerAction(CommandSender sender, String action, boolean staffOnly)
+    {
+        if (staffOnly)
+        {
+            for (Player player : Bukkit.getOnlinePlayers())
+            {
+                if (StaffList.isStaff(player))
+                {
+                    player.sendMessage(colorize("&8<-> &4&lSTAFF&r&8: &7" + action
+                            + " &8(" + Rank.getDisplay(sender).getColor() + Rank.getDisplay(sender).getTag()
+                            + " &7" + sender.getName() + "&8)&7"));
+                }
+            }
+        }
+        else
+        {
+            Bukkit.broadcastMessage(colorize("&8<-> &a&lSERVER&r&8: &7" + action
+                    + " &8(" + Rank.getDisplay(sender).getColor() + Rank.getDisplay(sender).getTag()
+                    + " &7" + sender.getName() + "&8)&7"));
+        }
+    }
+
+    public static String colorize(String string)
+    {
+        return ChatColor.translateAlternateColorCodes('&', string);
+    }
+
+    // Credits: Start (TotalFreedom (Can't be bothered writing these))
+    public static String dateToString(Date date)
+    {
+        return new SimpleDateFormat(DATE_STORAGE_FORMAT, Locale.ENGLISH).format(date);
+    }
+
+    public static Date stringToDate(String date_str)
+    {
+        try
+        {
+            return new SimpleDateFormat(DATE_STORAGE_FORMAT, Locale.ENGLISH).parse(date_str);
+        }
+        catch (ParseException ex)
+        {
+            return new Date(0L);
+        }
+    }
+
+    public static Date getUnixDate(long unix)
+    {
+        return new Date(unix * 1000);
+    }
+
+    public static long getUnixTime()
+    {
+        return System.currentTimeMillis() / 1000L;
+    }
+
+    public static long getUnixTime(Date date)
+    {
+        if (date == null)
+        {
+            return 0;
+        }
+
+        return date.getTime() / 1000L;
+    }
+
+>>>>>>> 433c31f41b8f455e354d2838e9062d7472422bbb
     public static Date parseDateOffset(String time)
     {
         Pattern timePattern = Pattern.compile(
@@ -181,6 +262,7 @@ public class NUtil
         return c.getTime();
     }
     // Credits: End
+<<<<<<< HEAD
 
 
     private static CommandMap cachedCommandMap = null;
@@ -203,4 +285,6 @@ public class NUtil
 
         return cachedCommandMap;
     }
+=======
+>>>>>>> 433c31f41b8f455e354d2838e9062d7472422bbb
 }

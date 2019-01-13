@@ -14,19 +14,25 @@
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
+<<<<<<< HEAD
         <repository>
             <id>jitpack</id>
             <url>https://jitpack.io</url>
         </repository>
+=======
+>>>>>>> 433c31f41b8f455e354d2838e9062d7472422bbb
     </repositories>
 
     <dependencies>
         <dependency>
+<<<<<<< HEAD
             <groupId>com.github.stanjg</groupId>
             <artifactId>Ptero4J</artifactId>
             <version>master-0.2-BETA-g3199651-4</version>
         </dependency>
         <dependency>
+=======
+>>>>>>> 433c31f41b8f455e354d2838e9062d7472422bbb
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
             <version>1.13.2-R0.1-SNAPSHOT</version>
@@ -35,6 +41,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+<<<<<<< HEAD
             <version>1.18.4</version>
             <scope>provided</scope>
         </dependency>
@@ -66,6 +73,9 @@
             <groupId>commons-lang</groupId>
             <artifactId>commons-lang</artifactId>
             <version>2.5</version>
+=======
+            <version>1.16.18</version>
+>>>>>>> 433c31f41b8f455e354d2838e9062d7472422bbb
         </dependency>
     </dependencies>
 
