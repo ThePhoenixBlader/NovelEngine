@@ -1,0 +1,69 @@
+#
+# NovelEngine's main configuration
+#
+
+# General information
+general:
+  # Name of your server?
+  name: NovelMC
+
+  # MOTD (shown on server list) - Color codes supported [&] and 2 lines motd [||] available
+  motd:
+    - "&3Novel&9MC||1.13.2"
+    - ""
+
+  # Website - useful to link to the forum for ban appeals, admin applications etc
+  website: http://novelmc.net/
+
+  # Event mode
+  eventmode: false
+
+  # Staff mode
+  staffmode: false
+
+pterodactyl:
+  apikey: ''
+  link: ''
+  serverName: ''
+# SQL information
+sql:
+  enabled: true
+  username: root
+  password: ''
+  host: 127.0.0.1
+  port: 3306
+  database: novelmc
+
+# TODO re-create command blocking system
+# TODO permissions
+# Commands to block - default for all, admins for staff
+permissionblocker:
+  default:
+    - '/gamemode'
+    - '/time'
+    - '/ban-ip'
+    - '/pardon-ip'
+    - '/pardon'
+    - '/save-on'
+    - '/save-off'
+    - '/nuke'
+    - '/summon'
+    - '/setblock'
+    - '/fill'
+    - '/tellraw'
+    - '/execute'
+    - '/packet'
+  staff:
+    - '/coreprotect'
+    - '/co'
+    - '/cp'
+    - '/stop'
+    - '/restart'
+    - '/save-all'
+    - '/reload'
+    - '/socialspy'
+    - '/gamerule'
+    - '//calc'
+    - '/sudo'
+    - '//fast'
+    - '/plugman'    
